@@ -139,3 +139,20 @@
   update();
   startAutoplay();
 })();
+
+
+// ===== Minimal cookie notice (only necessary cookies) =====
+(function(){
+  const KEY = 'cc-mini-v1';  // zvyšte číslo, pokud změníte text či logiku
+  const bar = document.getElementById('cc-mini');
+  const btn = document.querySelector('[data-cc-ok]');
+  if(!bar || !btn) return;
+
+  const seen = localStorage.getItem(KEY);
+  if(!seen){ bar.classList.add('show'); }
+
+  btn.addEventListener('click', () => {
+    localStorage.setItem(KEY, '1');
+    bar.classList.remove('show');
+  });
+})();

@@ -444,3 +444,21 @@ html{scroll-behavior:smooth}
 .center{text-align:center}
 .mt-1{margin-top:.25rem} .mt-2{margin-top:.5rem} .mt-3{margin-top:1rem}
 .mb-0{margin-bottom:0}
+
+
+/* ===== Minimal cookie notice ===== */
+.cc-mini{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  background:#fff; border-top:1px solid var(--line);
+  box-shadow:0 -8px 24px rgba(0,0,0,.08);
+  display:none; padding:12px 0;
+}
+.cc-mini.show{ display:block; }
+.cc-mini__inner{display:flex; gap:12px; align-items:center; justify-content:space-between}
+.cc-mini__text{margin:0; color:var(--muted)}
+.cc-mini__text a{color:var(--accent-strong); font-weight:600}
+.cc-mini__btn{white-space:nowrap}
+@media (max-width:800px){
+  .cc-mini__inner{flex-direction:column; align-items:stretch}
+  .cc-mini__btn{align-self:flex-end}
+}
