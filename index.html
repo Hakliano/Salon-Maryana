@@ -5,59 +5,244 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Salon Maryana</title>
 <link rel="stylesheet" href="assets/css/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
   <!-- ===== Navigace ===== -->
-  <header>
-    <nav>
-      <ul>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <img src="assets/img/icons/logo.png" alt="Salon Maryana logo" class="brand__logo">
+      <span class="brand__name">Salon Maryana</span>
+    </a>
+
+    <nav aria-label="Hlavní navigace">
+      <ul class="menu">
         <li><a href="#home">Domů</a></li>
         <li><a href="#cenik-sluzby">Ceník a Služby</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#kontakty">Kontakty</a></li>
       </ul>
     </nav>
-  </header>
+
+    <a class="btn cta" href="https://gerasymova-vlasy.reservio.com">Online rezervace</a>
+  </div>
+</header>
 
   <!-- ===== Sekce DOMŮ ===== -->
-  <section id="home">
-    <h1>Vítejte v Salon Maryana</h1>
-    <p>Krátký úvodní text, který se doplní později.</p>
-  </section>
+<section id="home" class="hero">
+  <div class="hero__inner container">
+    <h1>Moderní střihy & luxusní péče</h1>
+    <p class="lead">
+      Profesionální kadeřnické služby v Praze 5. Individuální přístup, špičkové barvy, nadčasový styl.
+    </p>
+    
+    <!-- Telefon -->
+    <p class="hero__phone">
+      <a href="tel:+420777123456">📞 +420 777 123 456</a>
+    </p>
+    
+    <a class="btn" href="https://gerasymova-vlasy.reservio.com">Rezervovat termín</a>
+
+  </div>
+</section>
+
 
   <!-- ===== Sekce CENÍK + SLUŽBY ===== -->
   <section id="cenik-sluzby">
     <h2>Ceník a seznam služeb</h2>
 <div class="services">
-  <div class="service"><strong>Pánský střih</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Střih barber</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Barvení brady</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Ženský střih</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Foukaná</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Barvení tón v tónu</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Barvení odrostu</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Melír odrosty</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Melír celé vlasy</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Balayage</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>AirTouch</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Odrosty blond</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Total blond</strong><br><small>cena doplníme</small></div>
-  <div class="service"><strong>Stahování černé barvy</strong><br><small>cena doplníme</small></div>
+  <div class="service">
+    <div class="service-header">
+      <strong>Pánský střih</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Moderní střih pro muže přizpůsobený tvaru obličeje a aktuálním trendům.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/8a34893e-dd5b-4ae1-b4b6-dd9fbf78a2fa" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Střih barber</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Klasický barber střih s důrazem na detail a precizní úpravu vlasů i vousů.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/ddaeb613-7de5-4929-8640-97bf03aa2f78" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Barvení brady</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Oživení barvy vousů, sjednocení odstínu nebo krytí šedin.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/67b2df91-20a0-427f-adfd-58ac62b3d5c7" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Ženský střih</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Střih na míru dle Vašeho stylu a typu vlasů, od krátkých po dlouhé.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/1172339d-7756-41c6-a873-f07efe01e8b3" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Foukaná</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Styling a objem pro každodenní nošení i slavnostní příležitosti.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/e01ad139-14aa-4f6e-96d0-8b6e8e3939db" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Barvení tón v tónu</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Jemné sjednocení odstínu vlasů bez výrazného odrostu.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/24c8ce80-ea26-4462-b42d-55b48f52bad5" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Barvení odrostu</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Precizní aplikace barvy na odrosty pro udržení perfektního vzhledu.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/d7f2df42-ca8f-422c-9fbf-93a7ab0040f4" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Melír odrosty</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Obnova melíru pouze na odrostlé části vlasů pro přirozený přechod.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/f4db9599-bc41-4f7b-a6b1-197954149698" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Melír celé vlasy</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Rozjasnění vlasů melírováním od kořínků po konečky.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/3a8c0c0d-164f-4d28-ae63-5180fc7c674b" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Balayage</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Moderní technika barvení s přirozeným přechodem odstínů.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/cdeb0b2f-a0b1-4652-a5c3-2c9a4f5a9f42" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>AirTouch</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Inovativní metoda barvení s použitím fénu pro jemný přirozený efekt.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/673c893c-9f13-4d77-bbeb-f45f94dc9aad" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Odrosty blond</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Doplnění blond barvy na odrostlé vlasy, aby barva působila stále svěže.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/864fe731-daf9-42bf-815f-468203136438" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Total blond</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Kompletní zesvětlení celé délky vlasů do zářivého blond odstínu.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/d321e536-bd9d-45e7-a502-8d5e2f6aa524" class="btn small">Objednat</a>
+  </div>
+
+  <div class="service">
+    <div class="service-header">
+      <strong>Stahování černé barvy</strong>
+      <span class="price-tag">300 Kč – 600 Kč</span>
+    </div>
+    <p>Postupné šetrné odstranění tmavé barvy pro následnou změnu odstínu.</p>
+    <a href="https://gerasymova-vlasy.reservio.com/services/96eb5f8a-f639-46c3-8e44-2bd6bebed365" class="btn small">Objednat</a>
+  </div>
 </div>
+
+
   </section>
 
   <!-- ===== Sekce GALERIE ===== -->
-  <section id="galerie">
-    <h2>Galerie</h2>
-    <p>Sem přidáme obrázky z assets/img/gallery.</p>
-  </section>
+  <section id="galerie" class="section">
+  <h2>Galerie</h2>
+
+  <div class="carousel container" aria-roledescription="carousel">
+    <div class="carousel__track" id="galleryTrack">
+      <div class="carousel__slide"><img src="assets/img/gallery/01.jpg" alt="Ukázka práce 1"></div>
+      <div class="carousel__slide"><img src="assets/img/gallery/02.jpg" alt="Ukázka práce 2"></div>
+      <div class="carousel__slide"><img src="assets/img/gallery/03.jpg" alt="Ukázka práce 3"></div>
+      <div class="carousel__slide"><img src="assets/img/gallery/04.jpg" alt="Ukázka práce 4"></div>
+      <div class="carousel__slide"><img src="assets/img/gallery/05.jpg" alt="Ukázka práce 5"></div>
+      <div class="carousel__slide"><img src="assets/img/gallery/06.jpg" alt="Ukázka práce 6"></div>
+      <div class="carousel__slide"><img src="assets/img/gallery/07.jpg" alt="Ukázka práce 7"></div>
+    </div>
+
+    <button class="carousel__btn prev" aria-label="Předchozí snímek">‹</button>
+    <button class="carousel__btn next" aria-label="Další snímek">›</button>
+
+    <div class="carousel__dots" id="galleryDots" aria-label="Indikátory snímků"></div>
+  </div>
+</section>
 
   <!-- ===== Sekce KONTAKTY ===== -->
-  <section id="kontakty">
-    <h2>Kontakty</h2>
-    <p>Zde bude adresa, telefon, e-mail a mapa.</p>
-  </section>
+ <section id="kontakty" class="section">
+  <h2>Kontakty</h2>
+  <div class="contacts container">
+    
+    <!-- Levý sloupec s kontakty -->
+    <div class="contact-card">
+      <ul class="contact-list">
+        <li>
+          <span class="icon">📍</span>
+          U smíchovského hřbitova 13, Praha 5
+        </li>
+        <li>
+          <span class="icon">📞</span>
+          <a href="tel:+420777123456">+420 777 123 456</a>
+        </li>
+        <li>
+          <span class="icon">✉️</span>
+          <a href="mailto:info@salonmaryana.cz">info@salonmaryana.cz</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Pravý sloupec s mapou -->
+    <iframe 
+      class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.0229569681577!2d14.389498076985163!3d50.06625567152069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b950f9c2ed9f5%3A0xa10f23a515d4d7f!2sU%20Sm%C3%ADchovsk%C3%A9ho%20h%C5%99bitova%2013%2C%20150%2000%20Praha%205-Sm%C3%ADchov!5e0!3m2!1scs!2scz!4v1697899059486!5m2!1scs!2scz" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    
+  </div>
+</section>
+
 
   <!-- ===== Patička ===== -->
   <footer>
