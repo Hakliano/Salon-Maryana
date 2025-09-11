@@ -12,3 +12,4 @@ Postaveno na čistém **HTML / CSS / JS**, strukturováno pro snadnou údržbu.
 
 ## Spuštění
 Stačí otevřít `index.html` v prohlížeči.
+nebo $ py -3 -m http.server 5500

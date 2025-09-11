@@ -137,11 +137,15 @@ html{scroll-behavior:smooth}
 
 /* ========== HERO (DOMŮ) – DESKTOP default ========== */
 .hero{
-  position:relative; isolation:isolate; color:#fff;
   background:
     linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.28)),
-    url("../img/hero/hero@1920x1200.png") center/cover no-repeat;
+    url("../img/hero/hero@1920x1200.png") center bottom / contain no-repeat;
+  background-color:#000;           /* vyplní okraje po contain */
+  aspect-ratio: 30 / 12;           /* výška = šířka * 10/16 */
+  min-height: unset;               /* zruší 80vh, aby neomezovalo contain */
 }
+
+
 
 .hero__inner{
   min-height:80vh;
@@ -151,6 +155,7 @@ html{scroll-behavior:smooth}
   align-items:flex-start;     /* zarovnání vlevo */
   text-align:left;
   padding:46px 0;
+  
 
   max-width:520px;            /* úzký sloupec */
   margin-left:8%;             /* odstup od levého okraje */
@@ -462,3 +467,20 @@ html{scroll-behavior:smooth}
   .cc-mini__inner{flex-direction:column; align-items:stretch}
   .cc-mini__btn{align-self:flex-end}
 }
+
+/* Otevírací doba – hero „štítek“ */
+.hero__hours{
+  margin: .25rem 0 1rem;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-block;
+  background: rgba(255,255,255,.85);
+  color: #111;
+  font-weight: 600;
+  backdrop-filter: saturate(180%) blur(2px);
+}
+
+/* Na desktopu zůstává hero text bílý; štítek už je čitelný s bílým pozadím.
+   Na mobilu jsme dávali lead text na černo – tohle s tím nekoliduje. */
+.muted{ color: var(--muted); }
