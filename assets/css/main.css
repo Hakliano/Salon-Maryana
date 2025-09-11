@@ -136,88 +136,89 @@ html{scroll-behavior:smooth}
 }
 
 /* ========== HERO (DOMŮ) – DESKTOP default ========== */
+/* ========== HERO – vždy celý obrázek, bez ořezu ========== */
 .hero{
+  /* Obrázek + jemný tmavý přechod pro čitelnost textu */
   background:
     linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.28)),
-    url("../img/hero/hero@1920x1200.png") center bottom / contain no-repeat;
-  background-color:#000;           /* vyplní okraje po contain */
-  aspect-ratio: 30 / 12;           /* výška = šířka * 10/16 */
-  min-height: unset;               /* zruší 80vh, aby neomezovalo contain */
+    url("../img/hero/gb_hero@1920x1200.png") center center / contain no-repeat;
+  background-color: #000;       /* letterbox okraje po contain */
+  
+  /* Výška sekce: na velkých displejích skoro přes celou obrazovku */
+  min-height: 80vh;
+
+  /* Snadné svislé centrování obsahu */
+  display: grid;
+  align-items: center;
+  isolation: isolate;           /* jistota pro vrstvy */
+  color: #fff;
 }
 
-
-
+/* Vnitřní sloupec s textem – bez kolizních min-height */
 .hero__inner{
-  min-height:80vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;     /* svisle doprostřed */
-  align-items:flex-start;     /* zarovnání vlevo */
-  text-align:left;
-  padding:46px 0;
-  
-
-  max-width:520px;            /* úzký sloupec */
-  margin-left:8%;             /* odstup od levého okraje */
+  min-height: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 46px 0 32px;         /* rezerva dole, ať nepřekrývá linku */
+  max-width: 520px;
+  margin-left: 8%;
 }
 
 .hero__inner h1,
 .hero__inner p,
 .hero__inner a{
-  max-width:100%;             /* text respektuje úzký sloupec */
-  margin-left:0;
+  max-width: 100%;
+  margin-left: 0;
 }
 
 .hero__phone{
-  margin-top:1rem;
-  font-size:1.3rem;
-  font-weight:700;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
-.hero__phone a{ color:var(--accent); text-decoration:none; }
-.hero__phone a:hover{ color:var(--accent-strong); text-decoration:underline; }
+.hero__phone a{ color: var(--accent); text-decoration: none; }
+.hero__phone a:hover{ color: var(--accent-strong); text-decoration: underline; }
 
-/* ========== Úpravy pro tablety ========== */
-@media (max-width: 900px){
-  .hero__inner{
-    min-height:68vh;
-    max-width:520px;
-    margin-left:6%;
-    padding:36px 0;
-  }
-}
-
-/* ========== MOBILNÍ LAYOUT – obrázek nahoře, text POD ním ========== */
+/* ========== Mobil (≤768px): obrázek nahoře, obsah až pod ním ========== */
 @media (max-width: 768px){
-  /* Hero už nepoužije background přímo; vytvoříme horní „panel“ s obrázkem */
   .hero{
-    color:var(--text);
-    background:none;
-    padding-top:56vh;               /* výška horního obrázku */
-    min-height:unset;
+    background: none !important;   /* obrázek nebude za textem */
+    padding-top: 0;
+    min-height: unset;
+    position: relative;
+    color: var(--text);
   }
+
+  /* Horní panel s obrázkem – vždy celý (contain) */
   .hero::before{
-    content:"";
-    position:absolute; left:0; top:0; right:0; height:56vh;
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;  /* poměr vašeho 1920×1200 hero */
     background:
       linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.2)),
-      url("../img/hero/hero@1920x1200.png") center/cover no-repeat;
+      url("https://haklweb.b-cdn.net/maryana/gb_hero%401920x1200.webp") center center / contain no-repeat;
+    background-color: #000;  /* vyplní letterbox okraje */
   }
 
-  /* Textový blok je pod obrázkem, v bílém boxu */
+  /* Text a tlačítka až pod obrázkem */
   .hero__inner{
-    position:relative;
-    min-height:unset;
-    max-width:100%;
-    margin:0;
-    padding:20px 18px 26px;
-    background:#fff;
-    text-align:center;
-    align-items:center;
+    position: relative;
+    max-width: 92%;
+    margin: 0 auto;
+    padding: 20px 16px 26px;
+    text-align: center;
+    align-items: center;
+    background: transparent; /* případně: #fff; border-radius:16px; box-shadow:var(--shadow-sm); */
   }
 
-  .hero__inner .btn{ margin-top:12px }
-  .hero__phone{ margin-top:.5rem; font-size:1.15rem; text-align:center }
+  .hero__inner .btn{ margin-top: 12px; }
+  .hero__phone{ margin-top: .5rem; font-size: 1.15rem; text-align: center; }
 }
+
 
 /* ========== CENÍK + SLUŽBY ========== */
 .prices{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:18px}
@@ -371,6 +372,29 @@ html{scroll-behavior:smooth}
   border-bottom:1px dashed #ececec;
 }
 .contact-list li:last-child{ border-bottom:0 }
+
+
+@media (max-width: 768px) {
+  .contacts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-card,
+  .map-embed {
+    width: 100%;
+  }
+
+  .map-embed {
+    order: 2; /* zajišťuje, že mapa bude až POD kontakty */
+  }
+
+  .contact-card {
+    order: 1;
+  }
+}
+
+
 
 /* Ikona – decentní „zlatý“ kroužek, barvu přebírá z currentColor */
 .icon{
