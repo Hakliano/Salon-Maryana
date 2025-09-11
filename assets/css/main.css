@@ -141,7 +141,7 @@ html{scroll-behavior:smooth}
   /* Obrázek + jemný tmavý přechod pro čitelnost textu */
   background:
     linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.28)),
-    url("../img/hero/gb_hero@1920x1200.png") center center / contain no-repeat;
+    url("https://haklweb.b-cdn.net/maryana/gb_hero%401920x1200.webp") center center / contain no-repeat;
   background-color: #000;       /* letterbox okraje po contain */
   
   /* Výška sekce: na velkých displejích skoro přes celou obrazovku */
